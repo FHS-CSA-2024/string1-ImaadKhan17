@@ -76,7 +76,9 @@ public class String1
      * makeOutWord("[[]]", "word") â†’ "[[word]]"
      */
     public String makeOutWord(String out, String word) {
-        return unimplemented;
+        String out1 = out.substring(0,2);
+        String out2 = out.substring(2);
+        return out1 + word + out2;
     }
 
     /*
@@ -87,7 +89,9 @@ public class String1
      * extraEnd("Hi") â†’ "HiHiHi"
      */
     public String extraEnd(String str) {
-        return unimplemented;
+        int strLen = str.length();
+        String strEnd = str.substring(strLen-2);
+        return strEnd+strEnd+strEnd;
     }
 
     /*
@@ -100,7 +104,12 @@ public class String1
      * firstTwo("ab") â†’ "ab"
      */
     public String firstTwo(String str) {
-        return unimplemented;
+        if (str.length()<2){
+            return str;
+        }else{
+            return str.substring(0,2);
+        }
+
     }
 
     /*
@@ -110,7 +119,8 @@ public class String1
      * firstHalf("abcdef") â†’ "abc"
      */
     public String firstHalf(String str) {
-        return unimplemented;
+        int strDiv = str.length()/2;
+        return str.substring(0,strDiv);
     }
 
     /*
@@ -121,7 +131,7 @@ public class String1
      * withoutEnd("coding") â†’ "odin"
      */
     public String withoutEnd(String str) {
-        return unimplemented;
+        return  str.substring(1, str.length()-1);
     }
 
     /*
@@ -133,7 +143,16 @@ public class String1
      * comboString("aaa", "b") â†’ "baaab"
      */
     public String comboString(String a, String b) {
-        return unimplemented;
+
+        int lenA = a.length();
+        int lenB = b.length();
+
+        if (lenA > lenB) {
+            return b + a + b;
+        }
+        else {
+            return a + b + a;
+        }
     }
 
     /*
@@ -144,7 +163,7 @@ public class String1
      * middleThree("solving") â†’ "lvi"
      */
     public String middleThree(String str) {
-        return unimplemented;
+        return str.substring(1,4);
     }
 
     /*
@@ -155,7 +174,14 @@ public class String1
      * extraFront("H") â†’ "HHH"
      */
     public String extraFront(String str) {
-        return unimplemented;
+
+        if (str.length()<2){
+            return str+str+str;
+        }
+        else{
+            String partialStr = str.substring(0,2);
+            return  partialStr + partialStr + partialStr;
+        }
     }
 
     /*
@@ -166,7 +192,11 @@ public class String1
      * left2("Hi") â†’ "Hi"
      */
     public String left2(String str) {
-        return unimplemented;
+
+       String strFront = str.substring(0,2);
+       String strEnd = str.substring(2);
+
+       return strEnd + strFront;
     }
 
     /*
@@ -178,7 +208,7 @@ public class String1
      * hasBad("xxbadxx") â†’ false
      */
     public boolean hasBad(String str) {
-        return false;
+        return str.contains("bad");
     }
 
     /*
@@ -190,7 +220,14 @@ public class String1
      * conCat("abc", "") â†’ "abc"
      */
     public String conCat(String a, String b) {
-        return unimplemented;
+        String aEnd = a.substring(a.length()-1);
+        String bStart = b.substring(0);
+
+        if (aEnd==bStart){
+            return a.substring(0, a.length()-1) + b;
+        }else{
+            return a + b;
+        }
     }
 
     /*
@@ -204,7 +241,15 @@ public class String1
      *minCat("java", "Hello") â†’ "javaello"
      */
     public String minCat(String a, String b) {
-        return unimplemented;
+    if (a.length() > b.length()){
+        a = a.substring(a.length()-b.length());
+        return  a + b;
+    }else if(b.length()>a.length()){
+        b = b.substring(b.length() - a.length());
+        return a +b;
+    }else{
+        return a + b;
+    }
     }
 
     /*
