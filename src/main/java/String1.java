@@ -260,7 +260,20 @@ public class String1
      * withoutX("Hxix") â†’ "Hxi"
      */
     public String withoutX(String str) {
-        return unimplemented;
+        if (str.substring(0) == "x"){
+            if(str.substring(str.length()-1)=="x"){
+                return str.substring(1, str.length()-1);
+            }
+            return str.substring(1);
+        }else if (str.substring(str.length()-1)){
+            if(str.substring(0)=="x"){
+                return str.substring(1, str.length()-1);
+            }
+            return str.substring(0, str.length()-1);
+        }
+        else{
+            return str;
+        }
     }
 
     /*
