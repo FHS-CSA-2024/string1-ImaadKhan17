@@ -221,9 +221,9 @@ public class String1
      */
     public String conCat(String a, String b) {
         String aEnd = a.substring(a.length()-1);
-        String bStart = b.substring(0);
+        String bStart = b.substring(0, 1);
 
-        if (aEnd==bStart){
+        if (aEnd.equals(bStart)){
             return a.substring(0, a.length()-1) + b;
         }else{
             return a + b;
@@ -260,20 +260,17 @@ public class String1
      * withoutX("Hxix") â†’ "Hxi"
      */
     public String withoutX(String str) {
-        if (str.substring(0) == "x"){
-            if(str.substring(str.length()-1)=="x"){
-                return str.substring(1, str.length()-1);
-            }
-            return str.substring(1);
-        }else if (str.substring(str.length()-1)){
-            if(str.substring(0)=="x"){
-                return str.substring(1, str.length()-1);
-            }
-            return str.substring(0, str.length()-1);
-        }
-        else{
-            return str;
-        }
+       int str_len = str.length();
+       if (str.substring(0,1).equals("x")){
+           if (str.substring(str_len-1).equals("x")){
+               return str.substring(1,str_len-1);
+           }
+       } else if (str.substring(str_len-1).equals("x")){
+           return str.substring(0, str_len-1);
+       }else{
+           return str;
+       }
+        return str;
     }
 
     /*
@@ -286,7 +283,18 @@ public class String1
      * deFront("away") â†’ "aay"
      */
     public String deFront(String str) {    
-        return unimplemented;
+        if (str.substring(0,1).equals("a")){
+            if (str.substring(1,2).equals("b")){
+                return str;
+            }
+            return str.substring(0,1) + str.substring(2);
+        }
+        else if (str.substring(1,2).equals("b")){
+            return str.substring(1);
+        }
+        else{
+            return str.substring(2);
+        }
     }
 
 }
