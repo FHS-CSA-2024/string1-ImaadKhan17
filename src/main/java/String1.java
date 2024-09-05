@@ -12,6 +12,7 @@ public class String1
         System.out.println(s.makeOutWord("<<>>", "Yay"));
         System.out.println(s.extraEnd("Hello"));
         System.out.println(s.firstTwo("Hello"));
+        System.out.println(s.firstHalf("HelloBobby"));
         System.out.println(s.withoutEnd("Hello"));
         System.out.println(s.comboString("hi", "Hello"));
         System.out.println(s.middleThree("Candy"));
